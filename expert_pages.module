@@ -12,6 +12,15 @@ function expert_pages_menu() {
     'file' => 'pages/expert.todos.inc',
   );
   
+  $items['my-expert/profile'] = array(
+    'title' => 'My profile',
+    'description' => 'My profile',
+    'page callback' => 'expert_pages_my_profile',
+    'access arguments' => array('access expert pages'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'pages/expert.profile.inc',
+  );
+  
   return $items;
 }
 
@@ -21,5 +30,18 @@ function expert_pages_permission() {
       'title' => t('Access expert pages'),
       'description' => t('Has access to the expert pages'),
     ),
+  );
+}
+
+function expert_pages_theme() {
+  return array(
+    'expert_pages_dashboard' => array(
+      'render element' => 'elements',
+      'file' => 'theme/expert.dashboard.inc',
+    ),
+    'expert_pages_dashboard_block' => array(
+      'render element' => 'elements',
+      'file' => 'theme/expert.dashboard.inc',
+    )
   );
 }
