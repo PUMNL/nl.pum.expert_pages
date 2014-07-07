@@ -1,0 +1,6 @@
+name = Expert pages
+description = Personal pages for experts
+core = 7.x
+package = PUM
+dependencies[] = civicrm (>=4.4)
+dependencies[] = views (>=3.7)

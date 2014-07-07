@@ -1,0 +1,25 @@
+<?php
+
+function expert_pages_menu() {
+  $items = array();
+  
+  $items['my-expert/todos'] = array(
+    'title' => 'My Todos',
+    'description' => 'My todos',
+    'page callback' => 'expert_pages_my_todo',
+    'access arguments' => array('access expert pages'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'pages/expert.todos.inc',
+  );
+  
+  return $items;
+}
+
+function expert_pages_permission() {
+  return array(
+    'access expert pages' => array (
+      'title' => t('Access expert pages'),
+      'description' => t('Has access to the expert pages'),
+    ),
+  );
+}
